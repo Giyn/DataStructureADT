@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1586000025 source:s:\大一下\qg工作室\qg训练营\qg训练营第二次培训\栈以及栈的应用\栈\代码和头文件\sqstack\sqstack\main.c
+	<stdio.h>
+	<stdlib.h>
+	"SqStack.h"
+
+1586003093 s:\大一下\qg工作室\qg训练营\qg训练营第二次培训\栈以及栈的应用\栈\代码和头文件\sqstack\sqstack\sqstack.h
+
+1586046669 source:s:\大一下\qg工作室\qg训练营\qg训练营第二次培训\栈以及栈的应用\栈\代码和头文件\sqstack\sqstack\sqstack.c
+	<stdio.h>
+	<stdlib.h>
+	"SqStack.h"
+
+1586079185 source:s:\大一下\qg工作室\qg-giyn\qg training camp-week 2\sqstack\main.c
+	<stdio.h>
+	<stdlib.h>
+	"SqStack.h"
+
+1586003093 s:\大一下\qg工作室\qg-giyn\qg training camp-week 2\sqstack\sqstack.h
+
+1586046669 source:s:\大一下\qg工作室\qg-giyn\qg training camp-week 2\sqstack\sqstack.c
+	<stdio.h>
+	<stdlib.h>
+	"SqStack.h"
+

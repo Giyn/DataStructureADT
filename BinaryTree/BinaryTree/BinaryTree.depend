@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1587907162 source:s:\大一下\qg工作室\qg训练营\qg训练营第五次培训\binarytree\lqueue.c
+	<stdio.h>
+	<stdlib.h>
+	"LQueue.h"
+
+1587906648 s:\大一下\qg工作室\qg训练营\qg训练营第五次培训\binarytree\lqueue.h
+	<stdlib.h>
+	<stdio.h>
+	<stdbool.h>
+	"BinaryTree.h"
+
+1587907162 source:s:\大一下\qg工作室\qg训练营\qg训练营第五次培训\binarytree\main.c
+	"BinaryTree.h"
+	<stdio.h>
+
+1558342011 s:\大一下\qg工作室\qg训练营\qg训练营第五次培训\binarytree\main.h
+	"BinaryTree.h"
+
+1587907162 s:\大一下\qg工作室\qg训练营\qg训练营第五次培训\binarytree\binarytree.h
+	<stdio.h>
+	<stdlib.h>
+	"LQueue.h"
+
+1587907162 source:s:\大一下\qg工作室\qg训练营\qg训练营第五次培训\binarytree\binarytree.c
+	"BinaryTree.h"
+	<stdbool.h>
+
+1587907162 source:s:\大一下\qg工作室\qg-training camp\qg training camp-week 5\binarytree\lqueue.c
+	<stdio.h>
+	<stdlib.h>
+	"LQueue.h"
+
+1587906648 s:\大一下\qg工作室\qg-training camp\qg training camp-week 5\binarytree\lqueue.h
+	<stdlib.h>
+	<stdio.h>
+	<stdbool.h>
+	"BinaryTree.h"
+
+1587912654 s:\大一下\qg工作室\qg-training camp\qg training camp-week 5\binarytree\binarytree.h
+	<stdio.h>
+	<stdlib.h>
+	"LQueue.h"
+
+1587912649 source:s:\大一下\qg工作室\qg-training camp\qg training camp-week 5\binarytree\binarytree.c
+	"BinaryTree.h"
+	<stdbool.h>
+
+1587912662 source:s:\大一下\qg工作室\qg-training camp\qg training camp-week 5\binarytree\main.c
+	"BinaryTree.h"
+	<stdio.h>
+

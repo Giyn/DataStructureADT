@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1585731768 source:d:\杂物\qg\qg\main.c
+	<stdio.h>
+	<stdlib.h>
+	"linkedList.h"
+
+1585731703 d:\杂物\qg\qg\linkedlist.h
+
+1585731761 source:d:\杂物\qg\qg\linkedlist.c
+	"linkedList.h"
+	<stdio.h>
+	<stdlib.h>
+
+1585731761 source:m:\linkedlist\linkedlist\linkedlist.c
+	"linkedList.h"
+	<stdio.h>
+	<stdlib.h>
+
+1585731703 m:\linkedlist\linkedlist\linkedlist.h
+
+1585732738 source:m:\linkedlist\linkedlist\main.c
+	<stdio.h>
+	<stdlib.h>
+	"linkedList.h"
+
+1586533844 source:s:\大一下\qg工作室\qg-giyn\qg training camp-week 1\linkedlist\linkedlist.c
+	"linkedList.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1586533794 s:\大一下\qg工作室\qg-giyn\qg training camp-week 1\linkedlist\linkedlist.h
+
+1586533812 source:s:\大一下\qg工作室\qg-giyn\qg training camp-week 1\linkedlist\main.c
+	<stdio.h>
+	<stdlib.h>
+	"linkedList.h"
+

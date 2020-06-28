@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1586003296 source:s:\大一下\qg工作室\qg训练营\qg训练营第二次培训\栈以及栈的应用\栈\代码和头文件\linkstack\linkstack\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkStack.h"
+
+1586079004 source:s:\大一下\qg工作室\qg训练营\qg训练营第二次培训\栈以及栈的应用\栈\代码和头文件\linkstack\linkstack\linkstack.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkStack.h"
+
+1586017125 s:\大一下\qg工作室\qg训练营\qg训练营第二次培训\栈以及栈的应用\栈\代码和头文件\linkstack\linkstack\linkstack.h
+
+1586079004 source:s:\大一下\qg工作室\qg-giyn\qg training camp-week 2\linkstack\linkstack.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkStack.h"
+
+1586017125 s:\大一下\qg工作室\qg-giyn\qg training camp-week 2\linkstack\linkstack.h
+
+1586079123 source:s:\大一下\qg工作室\qg-giyn\qg training camp-week 2\linkstack\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkStack.h"
+

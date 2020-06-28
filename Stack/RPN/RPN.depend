@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1586087983 source:s:\大一下\qg工作室\qg-giyn\qg training camp-week 2\rpn\main.c
+	<stdio.h>
+	<stdlib.h>
+	"RPN.h"
+
+1586087790 source:s:\大一下\qg工作室\qg-giyn\qg training camp-week 2\rpn\rpn.c
+	"RPN.h"
+
+1586084876 s:\大一下\qg工作室\qg-giyn\qg training camp-week 2\rpn\rpn.h
+	<stdio.h>
+	<malloc.h>
+	<math.h>
+

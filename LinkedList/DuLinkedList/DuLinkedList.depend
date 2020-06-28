@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1585730561 source:d:\杂物\dulinkedlist\dulinkedlist\main.c
+	<stdio.h>
+	<stdlib.h>
+	"duLinkedList.h"
+
+1585730711 d:\杂物\dulinkedlist\dulinkedlist\dulinkedlist.h
+
+1585729963 source:d:\杂物\dulinkedlist\dulinkedlist\dulinkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	"duLinkedList.h"
+
+1585729963 source:m:\dulinkedlist\dulinkedlist\dulinkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	"duLinkedList.h"
+
+1585730711 m:\dulinkedlist\dulinkedlist\dulinkedlist.h
+
+1586145152 source:s:\大一下\qg工作室\qg-giyn\qg training camp-week 1\dulinkedlist\dulinkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	"DuLinkedList.h"
+
+1586143736 s:\大一下\qg工作室\qg-giyn\qg training camp-week 1\dulinkedlist\dulinkedlist.h
+
+1586145059 source:s:\大一下\qg工作室\qg-giyn\qg training camp-week 1\dulinkedlist\main.c
+	<stdio.h>
+	<stdlib.h>
+	"duLinkedList.h"
+
