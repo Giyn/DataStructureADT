@@ -2,9 +2,9 @@
  *    File Name                :    AQueue.h
  *    CopyRight                :
  *
- *    SYSTEM                    :   Mac OS
+ *    SYSTEM                    :   Windows 10
  *    Create Data                :    2020.4.2
- *    Author/Corportation        :   Chuan Shi
+ *    Author/Corportation        :   Giyn
  *
  *
  *--------------------------------Revision History--------------------------------------
@@ -34,10 +34,10 @@
 
 typedef struct Aqueue
 {
-    void *data[MAXQUEUE];      //数据域
+    void *data[MAXQUEUE]; //数据域
     int front;
     int rear;
-    size_t length;        //队列长度
+    size_t length; //队列长度
 } AQueue;
 
 typedef enum

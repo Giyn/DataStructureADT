@@ -2,9 +2,9 @@
  *    File Name                :    LQueue.h
  *    CopyRight                :
  *
- *    SYSTEM                    :   Mac OS
+ *    SYSTEM                    :   Windows 10
  *    Create Data                :    2020.4.2
- *    Author/Corportation        :   Chuan Shi
+ *    Author/Corportation        :   Giyn
  *
  *
  *--------------------------------Revision History--------------------------------------
