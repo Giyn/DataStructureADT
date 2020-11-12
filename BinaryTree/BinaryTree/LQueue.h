@@ -1,10 +1,14 @@
+//
+// Created by Jiyuan Xu.
+//
+
 /***************************************************************************************
- *    File Name                :    LQueue.h
- *    CopyRight                :
+ *    File Name             : LQueue.h
+ *    CopyRight             :
  *
- *    SYSTEM                    :   Mac OS
- *    Create Data                :    2020.4.2
- *    Author/Corportation        :   Chuan Shi
+ *    SYSTEM                : Windows
+ *    Create Data           : 2020.11.12
+ *    Author/Corportation   : Jiyuan Xu
  *
  *
  *--------------------------------Revision History--------------------------------------
@@ -29,23 +33,20 @@
 #include<stdbool.h>
 #include"BinaryTree.h"
 
-typedef struct node
-{
+typedef struct node {
     void *data;                   //数据域指针
     struct node *next;            //指向当前结点的下一结点
 } Node;
 
-typedef struct Lqueue
-{
+typedef struct Lqueue {
     Node *front;                   //队头
     Node *rear;                    //队尾
     size_t length;            //队列长度
 } LQueue;
 
-typedef enum
-{
-    FALSE=0,
-    TRUE=1
+typedef enum {
+    FALSE = 0,
+    TRUE = 1
 } status;
 
 char type;
@@ -174,4 +175,3 @@ void InputData(void *data);
  *    End-Multi-Include-Prevent Section
  **************************************************************/
 #endif // LQUEUE_H_INCLUDED
-
