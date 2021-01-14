@@ -13,3 +13,17 @@
 	<stdlib.h>
 	"LQueue.h"
 
+1610614197 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\queue\lqueue\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LQueue.h"
+
+1610613543 s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\queue\lqueue\lqueue.h
+	<stdlib.h>
+	<stdio.h>
+
+1610613996 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\queue\lqueue\lqueue.c
+	"LQueue.h"
+	<stdio.h>
+	<stdlib.h>
+
