@@ -1,3 +1,10 @@
+/**
+ * @filename LinkedList.c
+ * @description LinkedList source file
+ * @author 许继元
+ * @date 2020/4/24
+ */
+
 #include "linkedList.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,19 +17,15 @@
  *	@return		 : LNode(the new head node) or Status
  *  @notice      : None
  */
-void *InitList(LinkedList L)
-{
-    if(!L) // Judge if the head node exists
-    {
-        return ERROR;
-    }
-    L = (LinkedList)malloc(sizeof(LNode)); // Allocate memory for the head node
-    if(L == NULL) // Judge if memory is sufficient
-    {
-        return OVERFLOW;
-    }
+void *InitList(LinkedList L) {
+    if (!L) return ERROR;
+
+    L = (LinkedList) malloc(sizeof(LNode));
+    if (L == NULL) return OVERFLOW;
+
     printf("Successfully initialize the LinkedList.\n");
     L->next = NULL;
+
     return L;
 }
 
@@ -33,17 +36,17 @@ void *InitList(LinkedList L)
  *	@return		 : Status
  *  @notice      : None
  */
-Status DestroyList(LinkedList L)
-{
+Status DestroyList(LinkedList L) {
     LinkedList p;
     p = L;
-    while(p)
-    {
+
+    while (p) {
         p = p->next;
         free(L); // Free up memory space.
         L = p;
     }
     printf("Successfully destroy the LinkedList!\n");
+
     return SUCCESS;
 }
 
@@ -54,26 +57,23 @@ Status DestroyList(LinkedList L)
  *	@return		 : L(the head pointer) or Status
  *  @notice      : None
  */
-void *InsertList(LinkedList L, int i, ElemType x)
-{
-    if(L == NULL)
-    {
+void *InsertList(LinkedList L, int i, ElemType x) {
+    if (L == NULL) {
         printf("Something wrong.\nThe LinkedList may not exist or there is only one node.");
         return ERROR;
     }
     LinkedList pre;
     pre = L;
-    for(int temp=1; temp < i; temp++)
-    {
-        pre = pre->next;
-    }
+    for (int temp = 1; temp < i; temp++) pre = pre->next;
+
     LinkedList q;
-    q = (LinkedList)malloc(sizeof(LNode));
+    q = (LinkedList) malloc(sizeof(LNode));
     q->data = x;
     q->next = pre->next;
     pre->next = q;
 
     printf("Successfully insert node!\n");
+
     return L;
 }
 
@@ -84,23 +84,22 @@ void *InsertList(LinkedList L, int i, ElemType x)
  *	@return		 : L(the head pointer)
  *  @notice      : None
  */
-void *DeleteList(LinkedList L, ElemType x)
-{
-    if(L == NULL || L->next == NULL)
-    {
+void *DeleteList(LinkedList L, ElemType x) {
+    if (L == NULL || L->next == NULL) {
         printf("Something wrong.\nThe LinkedList may not exist or there is only one node.");
         return ERROR;
     }
     LinkedList q, pre;
     q = L->next;
-    while(q->data != x)
-    {
+
+    while (q->data != x) {
         pre = q;
         q = q->next;
     }
     pre->next = q->next;
     free(q);
     printf("Successfully delete node!");
+
     return L;
 }
 
@@ -111,18 +110,23 @@ void *DeleteList(LinkedList L, ElemType x)
  *	@return		 : L(the head pointer)
  *  @notice      : None
  */
-void TraverseList(LinkedList L, void (*visit)(ElemType e))
-{
+void TraverseList(LinkedList L, void (*visit)(ElemType e)) {
     LinkedList p = L->next;
-    while(p)
-    {
+    while (p) {
         visit(p->data);
         p = p->next;
     }
     printf("\n");
 }
-void visit(ElemType e)
-{
+
+/**
+ *  @name        : void visit(ElemType e)
+ *	@description : visit the data of the node
+ *	@param		 : data of the node
+ *	@return		 : None
+ *  @notice      : None
+ */
+void visit(ElemType e) {
     printf("%d->", e);
 }
 
@@ -135,26 +139,21 @@ void visit(ElemType e)
  */
 void *SearchList(LinkedList L, int i) // Maybe can create a function to realize find by value.
 {
-    if(L == NULL || L->next == NULL)
-    {
+    if (L == NULL || L->next == NULL) {
         printf("Something wrong.\nThe LinkedList may not exist or there is only one node.");
         return NULL;
     }
     int j = 1;
     LinkedList p = L->next;
-    if(i == 1)
-    {
-        return L;
-    }
-    if(i < 1)
-    {
-        return NULL;
-    }
-    while(p && i>j)
-    {
+
+    if (i == 1) return L;
+    if (i < 1) return NULL;
+
+    while (p && i > j) {
         p = p->next;
         j++;
     }
+
     return p;
 }
 
@@ -165,24 +164,25 @@ void *SearchList(LinkedList L, int i) // Maybe can create a function to realize 
  *	@return		 : L(the head pointer)
  *  @notice      : None
  */
-void *ReverseList(LinkedList L)
-{
-	if(L == NULL)
-    {
+void *ReverseList(LinkedList L) {
+    if (L == NULL) {
         printf("Something wrong.\nThe LinkedList may not exist.");
         return ERROR;
     }
-	LNode*p,*q,*r;
-	p = L->next; L->next = NULL;
-	q = r = NULL;
-	while(p){
-		q = p->next;
-		p->next = r;
-		r = p;
-		p = q;
-	}
-	L->next = r;
-	return L;
+    LNode *p, *q, *r;
+    p = L->next;
+    L->next = NULL;
+    q = r = NULL;
+
+    while (p) {
+        q = p->next;
+        p->next = r;
+        r = p;
+        p = q;
+    }
+    L->next = r;
+
+    return L;
 }
 
 /**
@@ -192,30 +192,23 @@ void *ReverseList(LinkedList L)
  *	@return		 : L(the head pointer)
  *  @notice      : None
  */
-void IsLoopList(LinkedList L)
-{
-    if(L == NULL || L->next == NULL)
-    {
+void IsLoopList(LinkedList L) {
+    if (L == NULL || L->next == NULL) {
         printf("Something wrong.\nThe LinkedList may not exist or there is only one node.");
         return ERROR;
     }
     LinkedList fast, slow;
     slow = L;
     fast = L->next;
-    while(1)
-    {
-        if(!fast || !fast->next)
-        {
+    while (1) {
+        if (!fast || !fast->next) {
             printf("It is not a loop LinkedList.\n");
             return SUCCESS;
-        }
-        else if(fast == slow || fast->next == slow) // Fast pointer catches up or exceeds slow pointer.
+        } else if (fast == slow || fast->next == slow) // Fast pointer catches up or exceeds slow pointer.
         {
             printf("It is a loop LinkedList.\n");
             return SUCCESS;
-        }
-        else
-        {
+        } else {
             slow = slow->next;
             fast = fast->next->next;
         }
@@ -229,16 +222,14 @@ void IsLoopList(LinkedList L)
  *	@return		 : L(the head pointer)
  *  @notice      : choose to finish
  */
-LNode* ReverseEvenList(LinkedList L)
-{
+LNode *ReverseEvenList(LinkedList L) {
     LinkedList cur = L->next;
     LinkedList pre;
-    LinkedList phead = (LinkedList)malloc(sizeof(LNode));
+    LinkedList phead = (LinkedList) malloc(sizeof(LNode));
     phead->next = NULL;
     LinkedList ph = phead;
 
-    while( cur && cur->next )
-    {
+    while (cur && cur->next) {
         pre = cur;
         ph->next = pre->next; // First point to the second node in two groups.
         ph = ph->next; // Move ph pointer.
@@ -247,6 +238,7 @@ LNode* ReverseEvenList(LinkedList L)
         ph = ph->next; // Move ph pointer.
     }
     ph->next = cur; // Finally point to the remaining element if cur is NULL or odd.
+
     return phead;
 }
 
@@ -257,26 +249,17 @@ LNode* ReverseEvenList(LinkedList L)
  *	@return		 : LNode*
  *  @notice      : choose to finish
  */
-LNode* FindMidNode(LinkedList L)
-{
-    if(L == NULL || L->next == NULL)
-    {
-        return L;
-    }
+LNode *FindMidNode(LinkedList L) {
+    if (L == NULL || L->next == NULL) return L;
+
     LinkedList fast, slow;
     fast = slow = L;
-    while(fast!=NULL)
-    {
-        if(fast->next == NULL)
-        {
-            fast = fast->next;
-        }
-        else
-        {
-            fast = fast->next->next;
-        }
+    while (fast != NULL) {
+        if (fast->next == NULL) fast = fast->next;
+        else fast = fast->next->next;
         slow = slow->next;
     }
+
     return slow;
 }
 
@@ -287,30 +270,25 @@ LNode* FindMidNode(LinkedList L)
  *	@return		 : L(the head pointer)
  *  @notice      : None
  */
-void *Create()
-{
+void *Create() {
     LinkedList head;
     LinkedList p, s;
     ElemType x, cycle = 1;
-    head = (LinkedList)malloc(sizeof(LNode));
+    head = (LinkedList) malloc(sizeof(LNode));
     p = head;
-    while(cycle)
-    {
+
+    while (cycle) {
         printf("Please input the data(input non-integer to exit):");
-        if(scanf("%d", &x) == 1)
-        {
-            s = (LinkedList)malloc(sizeof(LNode));
+        if (scanf("%d", &x) == 1) {
+            s = (LinkedList) malloc(sizeof(LNode));
             s->data = x;
             p->next = s;
             p = s;
-        }
-        else
-        {
-            cycle = 0;
-        }
+        } else cycle = 0;
     }
     printf("Successfully create a LinkedList!\n");
     p->next = NULL;
+
     return head;
 }
 
@@ -321,14 +299,13 @@ void *Create()
  *	@return		 : Length of linked list
  *  @notice      : None
  */
-int LinkedList_length(LinkedList L)
-{
+int LinkedList_length(LinkedList L) {
     int k = 0;
-    while(L != NULL)
-    {
+    while (L != NULL) {
         k++;
         L = L->next;
     }
+
     return k;
 }
 
@@ -339,112 +316,90 @@ int LinkedList_length(LinkedList L)
  *	@return		 : L(the head pointer)
  *  @notice      : None
  */
-void *Create_loopLinkedList()
-{
+void *Create_loopLinkedList() {
     int i, length = 0, data = 0;
-	LinkedList pTail = NULL, p_new = NULL;
-	LinkedList pHead = (LinkedList)malloc(sizeof(LNode));
+    LinkedList pTail = NULL, p_new = NULL;
+    LinkedList pHead = (LinkedList) malloc(sizeof(LNode));
 
-	if (NULL == pHead)
-	{
-		printf("Memory allocation failed!\n");
-		return OVERFLOW;
-	}
+    if (NULL == pHead) {
+        printf("Memory allocation failed!\n");
+        return OVERFLOW;
+    }
 
-	pHead->data = 0;
-	pHead->next = pHead;
-	pTail = pHead;
+    pHead->data = 0;
+    pHead->next = pHead;
+    pTail = pHead;
 
-	printf("Please enter the length of the LinkedList:");
-	scanf("%d", &length);
+    printf("Please enter the length of the LinkedList:");
+    scanf("%d", &length);
 
-	for (i=1; i<length+1; i++)
-	{
-		p_new = (LinkedList)malloc(sizeof(LNode));
+    for (i = 1; i < length + 1; i++) {
+        p_new = (LinkedList) malloc(sizeof(LNode));
 
-		if (NULL == p_new)
-		{
-			printf("Memory allocation failed!\n");
-			return OVERFLOW;
-		}
+        if (NULL == p_new) {
+            printf("Memory allocation failed!\n");
+            return OVERFLOW;
+        }
 
-		printf("Please enter the data for No.%d node:", i);
-		scanf("%d", &data);
+        printf("Please enter the data for No.%d node:", i);
+        scanf("%d", &data);
 
-		p_new->data = data;
-		p_new->next = pHead; // The last node always points to the head node.
-		pTail->next = p_new;
-		pTail = p_new;
-	}
+        p_new->data = data;
+        p_new->next = pHead; // The last node always points to the head node.
+        pTail->next = p_new;
+        pTail = p_new;
+    }
 
-	return pHead;
+    return pHead;
 }
 
-// Check input number.
-int InputNumber()
-{
-	int num = 0; // Store converted numbers.
-	int status = 0; // Flag status.
-	char str[100]; // Receive string.
-	do
-	{
-		scanf("%s", str);
-		status = SUCCESS;
-		for (int i = 0; str[i] != '\0'; i++)
-		{
-			// Check for illegal characters.
-			if (i == 0)
-            {
-				if (str[i] == '-' || str[i] == '+')
-					continue;
-			}
-			else
-			{
-				if (str[i] < '0' || str[i] > '9')
-				{
-					status = ERROR;
-				}
-			}
-		}
-		if (status == ERROR)
-        {
-			printf("No such choice, input it again:");
-		}
-		else
-		{
-			int i = 0;
-			// Convert string to number.
-			for (i = 0, num = 0; str[i] != '\0'; i++)
-			{
-				if (i == 0)
-                {
-					if (str[i] == '-' || str[i] == '+')
-					{
-						continue;
-					}
-					else
-					{
-						num *= 10;
-						num += (str[i] - 48);
-					}
-				}
-				else
-				{
-					num *= 10;
-					num += (str[i] - 48);
-				}
-			}
-			if (str[0] == '-')
-            {
-				num = -num;
-			}
-			// Check if the number entered is out of bounds.
-			if (i >= 10)
-			{
-				printf("Overflow, please input again:");
-				status = ERROR;
-			}
-		}
-	} while (status == ERROR);
-	return num;
+/**
+ *  @name        : int InputNumber()
+ *	@description : Check input number
+ *	@param		 : None
+ *	@return		 : Integer
+ *  @notice      : None
+ */
+int InputNumber() {
+    int num = 0; // Store converted numbers.
+    int status = 0; // Flag status.
+    char str[100]; // Receive string.
+    do {
+        scanf("%s", str);
+        status = SUCCESS;
+
+        for (int i = 0; str[i] != '\0'; i++) {
+            // Check for illegal characters.
+            if (i == 0) {
+                if (str[i] == '-' || str[i] == '+') continue;
+            } else {
+                if (str[i] < '0' || str[i] > '9') status = ERROR;
+            }
+        }
+        if (status == ERROR) printf("No such choice, input it again:");
+        else {
+            int i = 0;
+            // Convert string to number.
+            for (i = 0, num = 0; str[i] != '\0'; i++) {
+                if (i == 0) {
+                    if (str[i] == '-' || str[i] == '+') continue;
+                    else {
+                        num *= 10;
+                        num += (str[i] - 48);
+                    }
+                } else {
+                    num *= 10;
+                    num += (str[i] - 48);
+                }
+            }
+            if (str[0] == '-') num = -num;
+            // Check if the number entered is out of bounds.
+            if (i >= 10) {
+                printf("Overflow, please input again:");
+                status = ERROR;
+            }
+        }
+    } while (status == ERROR);
+
+    return num;
 }

@@ -1,17 +1,11 @@
-/***************************************************************************************
- *	File Name				:	linkedList.h
- *	CopyRight				:	2020 QG Studio
- *	SYSTEM					:   win10
- *	Create Data				:	2020.3.28
- *
- *
- *--------------------------------Revision History--------------------------------------
- *	No	version		Data			Revised By			Item			Description
- *
- *
- ***************************************************************************************/
+/**
+ * @filename LinkedList.h
+ * @description LinkedList header file
+ * @author 许继元
+ * @date 2020/4/24
+ */
 
- /**************************************************************
+/**************************************************************
 *	Multi-Include-Prevent Section
 **************************************************************/
 #ifndef LINKEDLIST_H_INCLUDED
@@ -32,16 +26,15 @@ typedef int ElemType;
 
 // define struct of linked list
 typedef struct LNode {
-	ElemType data;
-  	struct LNode *next;
+    ElemType data;
+    struct LNode *next;
 } LNode, *LinkedList;
 
 // define Status
 typedef enum Status {
-	ERROR,
-	SUCCESS
+    ERROR,
+    SUCCESS
 } Status;
-
 
 /**************************************************************
 *	Prototype Declare Section
@@ -85,12 +78,20 @@ void *DeleteList(LinkedList L, ElemType x);
 
 /**
  *  @name        : void TraverseList(LinkedList L, void (*visit)(ElemType e))
- *	@description : traverse the linked list and call the funtion visit
+ *	@description : traverse the linked list and call the function visit
  *	@param		 : L(the head pointer), visit
- *	@return		 : L(the head pointer)
+ *	@return		 : None
  *  @notice      : None
  */
 void TraverseList(LinkedList L, void (*visit)(ElemType e));
+
+/**
+ *  @name        : void visit(ElemType e)
+ *	@description : visit the data of the node
+ *	@param		 : data of the node
+ *	@return		 : None
+ *  @notice      : None
+ */
 void visit(ElemType e);
 
 /**
@@ -127,7 +128,7 @@ void IsLoopList(LinkedList L);
  *	@return		 : L(the head pointer)
  *  @notice      : choose to finish
  */
-LNode* ReverseEvenList(LinkedList L);
+LNode *ReverseEvenList(LinkedList L);
 
 /**
  *  @name        : LNode* FindMidNode(LinkedList L)
@@ -136,7 +137,7 @@ LNode* ReverseEvenList(LinkedList L);
  *	@return		 : LNode*
  *  @notice      : choose to finish
  */
-LNode* FindMidNode(LinkedList L);
+LNode *FindMidNode(LinkedList L);
 
 /**
  *  @name        : void *Create()
@@ -165,9 +166,16 @@ int LinkedList_length(LinkedList L);
  */
 void *Create_loopLinkedList();
 
-int InputNumber(); // Check input number.
+/**
+ *  @name        : int InputNumber()
+ *	@description : Check input number
+ *	@param		 : None
+ *	@return		 : Integer
+ *  @notice      : None
+ */
+int InputNumber();
 
- /**************************************************************
+/**************************************************************
 *	End-Multi-Include-Prevent Section
 **************************************************************/
 #endif
