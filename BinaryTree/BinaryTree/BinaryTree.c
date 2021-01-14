@@ -1,6 +1,9 @@
-//
-// Created by Jiyuan Xu.
-//
+/**
+ * @filename BinaryTree.c
+ * @description Binary tree source file
+ * @author 许继元
+ * @date 2020/4/24
+ */
 
 #pragma once
 
@@ -9,13 +12,13 @@
 
 bool isInited = false; // 初始化标志
 
-
 // 初始化二叉树
 Status InitBiTree(BiTree T) {
     char n = InputOperator();
     CreateBiTree(T, &n);
     isInited = true;
     printf("\n成功创建二叉树\n");
+
     return SUCEESS;
 }
 
@@ -38,6 +41,7 @@ Status DestroyBiTree(BiTree T) {
         T = NULL;
     }
     isInited = false;
+
     return SUCEESS;
 }
 
@@ -65,12 +69,8 @@ Status PreOrderTraverse(BiTNode T, Status(*visit)(TElemType e)) {
         return ERROR;
     }
     visit(T.data);
-    if (T.lchild != NULL) {
-        PreOrderTraverse(*(T.lchild), visit);
-    }
-    if (T.rchild != NULL) {
-        PreOrderTraverse(*(T.rchild), visit);
-    }
+    if (T.lchild != NULL) PreOrderTraverse(*(T.lchild), visit);
+    if (T.rchild != NULL) PreOrderTraverse(*(T.rchild), visit);
 }
 
 // 中序遍历
@@ -79,13 +79,9 @@ Status InOrderTraverse(BiTNode T, Status(*visit)(TElemType e)) {
         printf("未初始化\n");
         return ERROR;
     }
-    if (T.lchild != NULL) {
-        InOrderTraverse(*(T.lchild), visit);
-    }
+    if (T.lchild != NULL) InOrderTraverse(*(T.lchild), visit);
     visit(T.data);
-    if (T.rchild != NULL) {
-        InOrderTraverse(*(T.rchild), visit);
-    }
+    if (T.rchild != NULL) InOrderTraverse(*(T.rchild), visit);
 }
 
 // 后序遍历
@@ -94,12 +90,8 @@ Status PostOrderTraverse(BiTNode T, Status(*visit)(TElemType e)) {
         printf("未初始化\n");
         return ERROR;
     }
-    if (T.lchild != NULL) {
-        PostOrderTraverse(*(T.lchild), visit);
-    }
-    if (T.rchild != NULL) {
-        PostOrderTraverse(*(T.rchild), visit);
-    }
+    if (T.lchild != NULL) PostOrderTraverse(*(T.lchild), visit);
+    if (T.rchild != NULL) PostOrderTraverse(*(T.rchild), visit);
     visit(T.data);
 }
 
@@ -115,25 +107,20 @@ Status LevelOrderTraverse(BiTNode T, Status(*visit)(TElemType e)) {
     Q.length = 0;
     InitLQueue(&Q);
     EnLQueue(&Q, &T); // 根节点入队
+
     while (!IsEmptyLQueue(&Q)) {
         GetHeadLQueue(&Q, &t);
         DeLQueue(&Q);
         visit(t.data); // 访问结点
-        if (t.lchild != NULL) {
-            EnLQueue(&Q, t.lchild); // 入队
-        }
-        if (t.rchild != NULL) {
-            EnLQueue(&Q, t.rchild); // 入队
-        }
+        if (t.lchild != NULL) EnLQueue(&Q, t.lchild); // 入队
+        if (t.rchild != NULL) EnLQueue(&Q, t.rchild); // 入队
     }
 }
 
 // 计算前缀表达式的值
 int Value(BiTNode T) {
+    if (T.data >= 48 && T.data <= 57) return T.data - 48;
 
-    if (T.data >= 48 && T.data <= 57) {
-        return T.data - 48;
-    }
     return Operate(Value(*T.lchild), Value(*T.rchild), T.data);
 }
 
@@ -173,11 +160,6 @@ int Operate(int n1, int n2, char operate) {
  *  @notice      : None
  */
 int InputNumber() {
-    typedef enum {
-        FALSE = 0,
-        TRUE = 1
-    } Status;
-
     int n = 0;
     int num = 0; // 存放输入数字
     int status = 0; // 标志状态
@@ -190,6 +172,7 @@ int InputNumber() {
             status = FALSE;
         }
     } while (status == FALSE);
+
     return num;
 }
 
@@ -211,5 +194,6 @@ char InputOperator() {
         }
     } while (status == FALSE);
     printf("%c", n);
+
     return n;
 }

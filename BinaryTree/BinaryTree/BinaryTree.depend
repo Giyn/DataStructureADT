@@ -74,3 +74,27 @@
 	"BinaryTree.h"
 	<stdio.h>
 
+1610630907 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\binarytree\binarytree\binarytree.c
+	"BinaryTree.h"
+	<stdbool.h>
+
+1610630987 s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\binarytree\binarytree\binarytree.h
+	<stdio.h>
+	<stdlib.h>
+	"LQueue.h"
+
+1610627704 s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\binarytree\binarytree\lqueue.h
+	<stdlib.h>
+	<stdio.h>
+	<stdbool.h>
+	"BinaryTree.h"
+
+1610625126 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\binarytree\binarytree\main.c
+	"BinaryTree.h"
+	<stdio.h>
+
+1610627704 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\binarytree\binarytree\lqueue.c
+	<stdio.h>
+	<stdlib.h>
+	"LQueue.h"
+

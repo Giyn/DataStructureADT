@@ -1,3 +1,10 @@
+/**
+ * @filename LinkBiTree.h
+ * @description Link binary tree header file
+ * @author 许继元
+ * @date 2020/4/24
+ */
+
 #ifndef BINARYTREE_H_INCLUDED
 #define BINARYTREE_H_INCLUDED
 
@@ -5,21 +12,18 @@
 #include <string.h>
 #include <stdio.h>
 
-
-typedef char TElemType;     // 假设二叉树结点的元素类型为字符
-
+typedef char TElemType; // 假设二叉树结点的元素类型为字符
 
 typedef struct BiTNode {
-    TElemType      data;     // 数据域
-    struct BiTNode  *lchild,*rchild;  // 左、右孩子指针
-} BiTNode, *BiTree;   // 二叉链表
+    TElemType data;         // 数据域
+    struct BiTNode *lchild; // 左孩子指针
+    struct BiTNode *rchild; // 右孩子指针
+} BiTNode, *BiTree; // 二叉链表
 
-
-typedef enum Status{
-	SUCCESS = 1,
-	ERROR = 0,
-}Status;
-
+typedef enum Status {
+    SUCCESS = 1,
+    ERROR = 0,
+} Status;
 
 /**
  *  @name        : Status InitBiTree(BiTree T);
@@ -28,7 +32,6 @@ typedef enum Status{
  */
 Status InitBiTree(BiTree *T);
 
-
 /**
  *  @name        : Status DestroyBiTree(BiTree T);
  *  @description : 摧毁二叉树T
@@ -36,14 +39,12 @@ Status InitBiTree(BiTree *T);
  */
 Status DestroyBiTree(BiTree T);
 
-
 /**
  *  @name        : Status CreateBiTree(BiTree T, char* definition);
  *  @description : 构造二叉树T
  *  @param       : 二叉树根结点T, 二叉树先序遍历字符串definition
  */
-Status CreateBiTree(BiTree T, char* definition);
-
+Status CreateBiTree(BiTree T, char *definition);
 
 /**
  *  @name        : Status PreOrderTraverse(BiTree T, Status (*visit)(TElemType e));
@@ -52,14 +53,12 @@ Status CreateBiTree(BiTree T, char* definition);
  */
 Status PreOrderTraverse(BiTree T, Status (*visit)(TElemType e));
 
-
 /**
  *  @name        : Status InOrderTraverse(BiTree T, Status (*visit)(TElemType e));
  *  @description : 中序遍历二叉树T
  *  @param       : 二叉树根结点T, 对结点的操作函数visit
  */
 Status InOrderTraverse(BiTree T, Status (*visit)(TElemType e));
-
 
 /**
  *  @name        : Status PostOrderTraverse(BiTree T, Status (*visit)(TElemType e)));
@@ -68,7 +67,6 @@ Status InOrderTraverse(BiTree T, Status (*visit)(TElemType e));
  */
 Status PostOrderTraverse(BiTree T, Status (*visit)(TElemType e));
 
-
 /**
  *  @name        : Status LevelOrderTraverse(BiTree T, Status (*visit)(TElemType e));
  *  @description : 层序遍历二叉树T
@@ -76,14 +74,13 @@ Status PostOrderTraverse(BiTree T, Status (*visit)(TElemType e));
  */
 Status LevelOrderTraverse(BiTree T, Status (*visit)(TElemType e));
 
-
 /**
  *  @name        : int Value(BiTree T);
  *  @description : 对构造出的前缀表达式二叉树求值
  *  @param       : 二叉树根结点T
- *  @note        : 可在结点结构体中设置个Tag值标志数字与操作符来构造二叉树，
+ *  @note        : 可在结点结构体中设置个Tag值标志数字与操作符来构造二叉树,
  *                 可根据需要自行增加操作.
  */
 int Value(BiTree T);
 
-#endif // BINARYTREE_H_INCLUDED
+#endif
