@@ -1,14 +1,19 @@
+/**
+ * @filename main.c
+ * @description RPN test file
+ * @author 许继元
+ * @date 2020/4/24
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "RPN.h"
 
-int main()
-{
-    LinkStack *operators = (LinkStack*)malloc(sizeof(LinkStack));
-    LinkStack *numbers = (LinkStack*)malloc(sizeof(LinkStack));
+int main() {
+    LinkStack *operators = (LinkStack *) malloc(sizeof(LinkStack));
+    LinkStack *numbers = (LinkStack *) malloc(sizeof(LinkStack));
     double res;
-    while(SUCCESS)
-    {
+    while (SUCCESS) {
         printf("\n\n\n");
         printf("--------Infix to Suffix calculator--------\n");
         printf("Input 'e' to exit.\n\n");
@@ -23,5 +28,6 @@ int main()
         system("pause");
         system("cls");
     }
+
     return 0;
 }

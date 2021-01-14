@@ -12,3 +12,16 @@
 	<malloc.h>
 	<math.h>
 
+1610605729 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\stack\rpn\main.c
+	<stdio.h>
+	<stdlib.h>
+	"RPN.h"
+
+1610605220 s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\stack\rpn\rpn.h
+	<stdio.h>
+	<malloc.h>
+	<math.h>
+
+1610605675 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\stack\rpn\rpn.c
+	"RPN.h"
+

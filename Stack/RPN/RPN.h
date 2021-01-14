@@ -1,25 +1,27 @@
+/**
+ * @filename RPN.h
+ * @description RPN header file
+ * @author 许继元
+ * @date 2020/4/24
+ */
+
 #include <stdio.h>
 #include <malloc.h>
 #include <math.h>
 
-typedef enum Status
-{
+typedef enum Status {
     ERROR = 0, SUCCESS = 1
 } Status;
 
-// StackNode
-typedef  struct StackNode
-{
+typedef struct StackNode {
     char cData;
     double data;
     struct StackNode *next;
 } StackNode, *LinkStackPtr;
 
-// LinkStack
-typedef  struct  LinkStack
-{
+typedef struct LinkStack {
     LinkStackPtr top;
-    int	count;
+    int count;
 } LinkStack;
 
 Status initLStack(LinkStack *s); // 初始化栈
