@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1610617468 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\sortingalgorithm\sortproject\linkstack.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkStack.h"
+
+1610617388 s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\sortingalgorithm\sortproject\linkstack.h
+
+1610624163 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\sortingalgorithm\sortproject\main.c
+	<stdio.h>
+	<stdlib.h>
+	"qgsort.h"
+	<time.h>
+
+1610624048 s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\sortingalgorithm\sortproject\qgsort.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"LinkStack.h"
+
+1610624141 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\sortingalgorithm\sortproject\qgsort.c
+	"qgsort.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
