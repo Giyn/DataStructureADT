@@ -23,3 +23,15 @@
 	<stdlib.h>
 	"SqStack.h"
 
+1610604295 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\stack\sqstack\sqstack.c
+	<stdio.h>
+	<stdlib.h>
+	"SqStack.h"
+
+1610604295 s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\stack\sqstack\sqstack.h
+
+1610604447 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\stack\sqstack\main.c
+	<stdio.h>
+	<stdlib.h>
+	"SqStack.h"
+
