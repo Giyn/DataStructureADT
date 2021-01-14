@@ -30,3 +30,15 @@
 	<stdlib.h>
 	"duLinkedList.h"
 
+1610603836 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\linkedlist\dulinkedlist\dulinkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	"DuLinkedList.h"
+
+1610603836 s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\linkedlist\dulinkedlist\dulinkedlist.h
+
+1610603836 source:s:\gdut\freshman\freshmansecondsemester\qgstudio\datastructureadt\linkedlist\dulinkedlist\main.c
+	<stdio.h>
+	<stdlib.h>
+	"DuLinkedList.h"
+

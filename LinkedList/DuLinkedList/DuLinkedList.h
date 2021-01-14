@@ -1,17 +1,11 @@
-/***************************************************************************************
- *	File Name				:	duLinkedList.h
- *	CopyRight				:	2020 QG Studio
- *	SYSTEM					:   win10
- *	Create Data				:	2020.3.28
- *
- *
- *--------------------------------Revision History--------------------------------------
- *	No	version		Data			Revised By			Item			Description
- *
- *
- ***************************************************************************************/
+/**
+ * @filename DuLinkedList.h
+ * @description DuLinkedList header file
+ * @author 许继元
+ * @date 2020/4/24
+ */
 
- /**************************************************************
+/**************************************************************
 *	Multi-Include-Prevent Section
 **************************************************************/
 
@@ -33,16 +27,15 @@ typedef int ElemType;
 
 // define struct of linked list
 typedef struct DuLNode {
-	ElemType data;
-  	struct DuLNode *prior, *next;
+    ElemType data;
+    struct DuLNode *prior, *next;
 } DuLNode, *DuLinkedList;
 
 // define status
 typedef enum Status {
-	ERROR,
-	SUCCESS,
+    ERROR,
+    SUCCESS,
 } Status;
-
 
 /**************************************************************
 *	Prototype Declare Section
@@ -92,6 +85,14 @@ void *DeleteList_DuL(DuLinkedList L, ElemType e);
  *  @notice      : None
  */
 void TraverseList_DuL(DuLinkedList L, void (*visit)(ElemType e));
+
+/**
+ *  @name        : void visit(ElemType e)
+ *	@description : visit the data of the node
+ *	@param		 : data of the node
+ *	@return		 : None
+ *  @notice      : None
+ */
 void visit(ElemType e);
 
 /**
@@ -112,9 +113,16 @@ void *Create(int n);
  */
 void *SearchList(DuLinkedList L, int i);
 
-int InputNumber(); // Check input number.
+/**
+ *  @name        : int InputNumber()
+ *	@description : Check input number
+ *	@param		 : None
+ *	@return		 : Integer
+ *  @notice      : None
+ */
+int InputNumber();
 
- /**************************************************************
+/**************************************************************
 *	End-Multi-Include-Prevent Section
 **************************************************************/
 #endif
