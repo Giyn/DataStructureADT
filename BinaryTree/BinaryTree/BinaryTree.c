@@ -6,7 +6,6 @@
  */
 
 #pragma once
-
 #include"BinaryTree.h"
 #include<stdbool.h>
 
